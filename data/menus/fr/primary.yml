@@ -25,9 +25,19 @@ items:
     descendants_targets: []
     path: "/pages/histoire/la-cuisine"
     file: content/fr/pages/histoire/la-cuisine/_index.html
+  - title: Le salon
+    slug: le-salon
+    target: "/histoire/le-salon/"
+    kind: page
+    new_tab: false
+    children: []
+    descendants_targets: []
+    path: "/pages/histoire/le-salon"
+    file: content/fr/pages/histoire/le-salon/_index.html
   descendants_targets:
   - "/histoire/introduction/"
   - "/histoire/la-cuisine/"
+  - "/histoire/le-salon/"
   path: "/pages/histoire"
   file: content/fr/pages/histoire/_index.html
 - title: Personnes
