@@ -1,6 +1,35 @@
 ---
 title: Menu principal
 items:
+- title: Histoire
+  slug: histoire
+  target: "/histoire/"
+  kind: page
+  new_tab: false
+  children:
+  - title: Introduction
+    slug: introduction
+    target: "/histoire/introduction/"
+    kind: page
+    new_tab: false
+    children: []
+    descendants_targets: []
+    path: "/pages/histoire/introduction"
+    file: content/fr/pages/histoire/introduction/_index.html
+  - title: La cuisine
+    slug: la-cuisine
+    target: "/histoire/la-cuisine/"
+    kind: page
+    new_tab: false
+    children: []
+    descendants_targets: []
+    path: "/pages/histoire/la-cuisine"
+    file: content/fr/pages/histoire/la-cuisine/_index.html
+  descendants_targets:
+  - "/histoire/introduction/"
+  - "/histoire/la-cuisine/"
+  path: "/pages/histoire"
+  file: content/fr/pages/histoire/_index.html
 - title: Personnes
   slug: personnes
   target: "/personnes/"

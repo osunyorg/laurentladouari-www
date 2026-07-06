@@ -14,3 +14,11 @@ for = ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.webp"]
 [headers.values]
 Cache-Control = "max-age=31536000, no-transform, public"
 
+[[redirects]]
+from = "/la-cuisine/index.html"
+to = "/histoire/la-cuisine/"
+
+[[redirects]]
+from = "/introduction/index.html"
+to = "/histoire/introduction/"
+
