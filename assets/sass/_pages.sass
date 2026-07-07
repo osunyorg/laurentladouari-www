@@ -1,0 +1,20 @@
+.pages__section
+    @include media-breakpoint-up(desktop)
+        .hero
+            .content
+                flex-direction: column
+                padding-left: offset(3)
+                .hero-image
+                    order: -1
+                    width: columns(6)
+                .hero-text
+                    width: columns(6)
+        .block-chapter
+            .chapter
+                margin-left: offset(3)
+                width: columns(6)
+
+        .block-pages
+            .block-content
+                margin-left: offset(3)
+                width: columns(6)

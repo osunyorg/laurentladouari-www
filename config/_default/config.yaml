@@ -1,13 +1,19 @@
-theme: osuny
 _merge: deep
+theme:
+  - osuny
+  - osuny-plugin-single-page-application
 params:
   summary:
     position: hero
   search:
-    active: true
+    active: false
   logo:
     header: ''
     footer: ''
   home:
     head:
       title: site
+  breadcrumb:
+    position: none
+  design:
+    force_full_width: true
