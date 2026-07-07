@@ -17,3 +17,6 @@ params:
     position: none
   design:
     force_full_width: true
+  components:
+    lightbox:
+      disabled: true
