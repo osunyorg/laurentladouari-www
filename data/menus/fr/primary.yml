@@ -34,9 +34,19 @@ items:
     descendants_targets: []
     path: "/pages/histoire/le-salon"
     file: content/fr/pages/histoire/le-salon/_index.html
+  - title: Le jardin
+    slug: le-jardin
+    target: "/histoire/le-jardin/"
+    kind: page
+    new_tab: false
+    children: []
+    descendants_targets: []
+    path: "/pages/histoire/le-jardin"
+    file: content/fr/pages/histoire/le-jardin/_index.html
   descendants_targets:
   - "/histoire/introduction/"
   - "/histoire/la-cuisine/"
+  - "/histoire/le-jardin/"
   - "/histoire/le-salon/"
   path: "/pages/histoire"
   file: content/fr/pages/histoire/_index.html
