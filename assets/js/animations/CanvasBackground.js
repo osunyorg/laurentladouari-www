@@ -58,11 +58,11 @@ export class CanvasBackground {
   }
   updatePageTransitionTransform () {
     const distanceFactor = 0.1,
-          x = canvasBackground.lastLine.end.x * distanceFactor,
-          y = canvasBackground.lastLine.end.y * distanceFactor;
+          x = (canvasBackground.lastLine.start.x - canvasBackground.lastLine.end.x) * distanceFactor,
+          y = (canvasBackground.lastLine.start.y - canvasBackground.lastLine.end.y) * distanceFactor;
 
-    document.documentElement.style.setProperty('--transition-transform-out', `translate(${-x}px, ${-y}px)`);
-    document.documentElement.style.setProperty('--transition-transform-in', `translate(${x}px, ${y}px)`);
+    document.documentElement.style.setProperty('--transition-transform-out', `translate(${x}px, ${y}px)`);
+    document.documentElement.style.setProperty('--transition-transform-in', `translate(${-x}px, ${-y}px)`);
   }
   reinit() {
     this.resize();

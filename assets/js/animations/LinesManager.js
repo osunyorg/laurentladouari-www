@@ -12,7 +12,12 @@ export default class LinesManager {
     this.lines = [];
   }
   createFromLink(link) {
-    const line = new Line(angles[this.lines.length % angles.length], link, this.lines.length, this.game);
+    const line = new Line({
+      rotation: angles[this.lines.length % angles.length],
+      element: link,
+      index: this.lines.length,
+      game: this.game
+    });
     this.lines.push(line);
   }
 
@@ -21,8 +26,14 @@ export default class LinesManager {
       return;
     }
 
-    const angle = this.game.lastLine.rotation + 180;
-    const line = new Line(angle, title, this.lines.length, this.game);
+    const line = new Line({
+      rotation: this.game.lastLine.rotation + 180,
+      element: title,
+      index: this.lines.length,
+      game: this.game,
+      reverse: true
+    });
+
     this.lines.push(line);
   }
   clear() {
