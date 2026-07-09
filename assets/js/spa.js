@@ -1,12 +1,12 @@
 import Swup from 'swup';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
+import { canvasBackground } from './animations/CanvasBackground';
 
 window.osuny = window.osuny || {};
 
 document.addEventListener('DOMContentLoaded', function () {
-    const animated = false,
-        options = {
+    const options = {
             animationSelector: false,
             containers: ['#main'],
             ignoreVisit: (url, { el } = {}) => (
@@ -22,20 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     swup.hooks.replace('animation:out:await', async () => {
         await new Promise((resolve) => {
-            document.body.classList.add('is-updating');
+            canvasBackground.updatePageTransitionTransform();
             setTimeout(resolve, 500);
         });
     });
 
-
     swup.hooks.on('page:view', () => {
         window.osuny.page.init();
-
-        setTimeout(() => {
-            document.body.classList.remove('is-updating');
-        }, 500)
-
+        canvasBackground.reinit();
         window.scrollTo(0, 0);
     });
+
+    canvasBackground.setup();
 });
 

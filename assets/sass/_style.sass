@@ -1,11 +1,26 @@
-// SWUP
+// SWUP transitions
 html.swup-enabled
+    --page-transition-duration: 500ms
     #main
-        transition: opacity 0.2s
+        transition-property: opacity, transform
+        transition-duration: var(--page-transition-duration)
+        transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1)
+        transform: translateX(0)
+        opacity: 1
+    #canvas-background-container
+        transition: opacity var(--page-transition-duration)
 
-html.is-changing
+html.is-animating
     #main
         opacity: 0
+        transition-timing-function: cubic-bezier(0.5, 0, 0.75, 0)
+        transform: var(--transition-transform-in)
+    #canvas-background-container
+        opacity: 0
+
+html.is-leaving
+    #main
+        transform: var(--transition-transform-out)
 
 header#document-header
     .logo
@@ -15,3 +30,16 @@ header#document-header
 footer#document-footer
     display: none
 
+#main
+    position: relative
+
+body
+    position: relative
+    min-height: 100vh
+    min-height: rvh(100)
+    #canvas-background-container
+        position: absolute
+        inset: 0
+        z-index: -1
+        canvas
+            display: block

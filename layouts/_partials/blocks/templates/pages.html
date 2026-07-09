@@ -1,0 +1,17 @@
+{{ $class := partial "blocks/templates/pages/helpers/GetClass" . }}
+{{ $block := .block }}
+{{ with .block.data }}
+  {{ $layout := .layout | default "grid" }}
+  <div class="{{ $class }}">
+
+    <div class="container">
+      <div class="block-content">
+        {{ with $block.top }}
+          {{ with .title }}
+            <a href="{{ .link }}">{{ safeHTML .value }} <span class="line-anchor"></span></a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

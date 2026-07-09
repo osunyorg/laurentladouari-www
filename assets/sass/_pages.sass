@@ -1,4 +1,33 @@
+.line-anchor
+    display: block
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    background: var(--color-text)
+    .visited &
+        border: 1px solid var(--color-background)
+        background: white
+
+
 .pages__section
+    .hero
+        .hero-text
+            h1
+                display: flex
+                align-items: center
+                gap: $spacing-2
+    .block-pages
+        a
+            display: flex
+            align-items: center
+            gap: $spacing-2
+        &:nth-child(even)
+            a
+                justify-content: end
+        &:nth-child(odd)
+            .line-anchor
+                order: -1
+
     @include media-breakpoint-up(desktop)
         .hero
             .content
@@ -9,7 +38,6 @@
                     width: columns(6)
                 .hero-text
                     width: columns(6)
-
         .block-chapter
             .chapter
                 margin-left: offset(3)
@@ -19,3 +47,4 @@
             .block-content
                 margin-left: offset(3)
                 width: columns(6)
+

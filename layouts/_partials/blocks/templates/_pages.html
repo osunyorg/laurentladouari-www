@@ -1,8 +1,0 @@
-{{ $class := partial "blocks/templates/pages/helpers/GetClass" . }}
-{{ $block := .block }}
-{{ with .block.data }}
-  {{ $layout := .layout | default "grid" }}
-  <div class="{{ $class }}">
-    {{ partial "blocks/top.html" $block.top }}
-  </div>
-{{ end }}
